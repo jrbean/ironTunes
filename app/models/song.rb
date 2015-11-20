@@ -8,4 +8,8 @@ class Song < ActiveRecord::Base
   has_many :playlists, through: :playlist_songs
 
   belongs_to :suggested_by, class_name: "User"
+
+  def vetoed?
+    Veto.where(song_id: self.id).count > 0
+  end
 end

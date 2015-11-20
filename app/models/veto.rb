@@ -4,4 +4,9 @@ class Veto < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :song
+
+  def veto_available
+    #TODO Limit veto availability by time.
+    true
+  end
 end

@@ -3,4 +3,8 @@ class Vote < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :song
+
+  def vote_check_passed
+    user.votes.count < 10
+  end
 end
