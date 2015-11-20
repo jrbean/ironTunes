@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   has_many :votes
+  has_many :vetos
+  has_many :songs_vetoed, through: :vetos, source: :song
+  has_many :songs_voted_for, through: :votes, source: :songs_voted_for
+  has_many :user_songs, class_name: "Song", foreign_key: "suggested_by_id"
 end
