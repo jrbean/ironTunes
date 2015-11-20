@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :votes, only: [:create, :destroy]
   resources :vetos, only: [:create, :destroy]
   resources :songs
+
+  root to: "playlist#index"
   end
