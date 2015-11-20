@@ -1,0 +1,2 @@
+class VetosController < ApplicationController
+end
